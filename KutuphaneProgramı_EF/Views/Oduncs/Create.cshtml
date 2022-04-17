@@ -1,0 +1,50 @@
+﻿@model KutuphaneProgramı_EF.Models.Odunc
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Odunc İşlemleri</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UyeId" class="control-label">Uye Adı</label>
+                <select asp-for="UyeId" class ="form-control" asp-items="ViewBag.UyeId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KitaplarIsbn" class="control-label">Kitap Isbn</label>
+                <select asp-for="KitaplarIsbn" class ="form-control" asp-items="ViewBag.KitaplarIsbn"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VerilisTarihi" class="control-label">Veriliş Tarihi</label>
+                <input asp-for="VerilisTarihi" class="form-control" />
+                <span asp-validation-for="VerilisTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TeslimTarihi" class="control-label">Teslim Tarihi</label>
+                <input asp-for="TeslimTarihi" class="form-control" />
+                <span asp-validation-for="TeslimTarihi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Iptal" class="control-label">Durum</label>
+                <input asp-for="Iptal" class="form-control" />
+                <span asp-validation-for="Iptal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kayıt" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Index">Liseye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

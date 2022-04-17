@@ -1,0 +1,62 @@
+﻿@model IEnumerable<KutuphaneProgramı_EF.Models.Odunc>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Odunc İşlemleri</h1>
+
+<p>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Create">Yeni Kayıt</a>
+</p>
+<table class="table table-sm table-success">
+    <thead class="text-danger">
+        <tr class="text-center">
+            <th>
+                Uye Adı
+
+            </th>
+            <th>
+                ISBN No
+            </th>
+            <th>
+                Veriliş Tarihi
+            </th>
+            <th>
+                Teslim Tarihi
+            </th>
+            <th>
+                Durum
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="text-primary text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Uye.AdSoyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KitaplarIsbnNavigation.Isbn)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.VerilisTarihi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TeslimTarihi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Iptal)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Details" asp-route-id="@item.Id">Detay</a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

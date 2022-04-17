@@ -1,0 +1,67 @@
+﻿@model IEnumerable<KutuphaneProgramı_EF.Models.Kitaplar>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Kitaplar</h1>
+
+<p>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Create">Yeni Kayıt</a>
+</p>
+<table class="table table-sm table-success" class="table">
+    <thead class="text-danger">
+        <tr class="text-center">
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SayfaSayisi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stok)
+            </th>
+            <th>
+                Tur
+            </th>
+            <th>
+                Yayın Evi
+            </th>
+            <th>
+                Yazar
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="text-primary text-center">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SayfaSayisi)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Stok)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Turler.TurAd)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YayinEvleri.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Yazarlar.AdSoyad)
+                </td>
+                <td>
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Isbn">Düzenle</a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Details" asp-route-id="@item.Isbn">Detay</a> |
+                    <a class="btn btn-outline-primary btn-sm" asp-action="Delete" asp-route-id="@item.Isbn">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

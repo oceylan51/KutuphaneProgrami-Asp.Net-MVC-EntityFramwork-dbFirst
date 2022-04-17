@@ -1,0 +1,96 @@
+﻿@model IEnumerable<KutuphaneProgramı_EF.Models.Uyeler>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Uyeler</h1>
+
+<p>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Create">Yeni Kayıt</a>
+</p>
+<table class="table table-sm table-success text-center">
+    <thead class="text-danger">
+        <tr class="text-center">
+            <th>
+                Adı Soyadı
+            </th>
+            <th>
+                Cinsiyet
+            </th>
+            <th>
+                Doğum Tarihi
+            </th>
+            <th>
+                Telefon
+            </th>
+            <th>
+                Mail
+            </th>
+            <th>
+                Uyelik Tarihi
+            </th>
+            <th>
+                Üyelik Türü
+            </th>
+            <th>
+                Tc
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Meslek)
+            </th>
+            <th>
+                Eğitim Durumu
+            </th>
+            <th>
+                Ceza Durumu
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr class="text-primary text-center">
+            <td>
+                @Html.DisplayFor(modelItem => item.AdSoyad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cinsiyet)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DogumTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UyelikTarihi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UyelikTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TcNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Meslek)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EgitimDurumu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CezaDurumu)
+            </td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@item.Id">Düzenle</a>
+                <a class="btn btn-outline-primary btn-sm" asp-action="Details" asp-route-id="@item.Id">Detay</a>
+                <a class="btn btn-outline-primary btn-sm" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

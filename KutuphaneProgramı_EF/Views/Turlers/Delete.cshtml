@@ -1,0 +1,28 @@
+﻿@model KutuphaneProgramı_EF.Models.Turler
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Sil</h1>
+
+<h3>Kaydı Silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Turler</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Tür Adı
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TurAd)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Sil" class="btn btn-danger" /> |
+        <a class="btn btn-outline-primary btn-sm" asp-action="Index">Listeye Geri Dön</a>
+    </form>
+</div>
