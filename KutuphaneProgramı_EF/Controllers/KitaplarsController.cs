@@ -50,8 +50,8 @@ namespace KutuphaneProgramı_EF.Controllers
         public IActionResult Create()
         {
             ViewData["TurlerId"] = new SelectList(_context.Turlers, "Id", "TurAd");
-            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "ad");
-            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "AdSoyad  ");
+            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "Ad");
+            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "AdSoyad");
             return View();
         }
 
@@ -68,9 +68,9 @@ namespace KutuphaneProgramı_EF.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TurlerId"] = new SelectList(_context.Turlers, "Id", "TurAd", kitaplar.TurlerId);
-            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "ad", kitaplar.YayinEvleriId);
-            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "AdSoyad", kitaplar.YazarlarId);
+            ViewData["TurlerId"] = new SelectList(_context.Turlers, "Id", "Id", kitaplar.TurlerId);
+            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "Id", kitaplar.YayinEvleriId);
+            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "Id", kitaplar.YazarlarId);
             return View(kitaplar);
         }
 
@@ -125,9 +125,9 @@ namespace KutuphaneProgramı_EF.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["TurlerId"] = new SelectList(_context.Turlers, "Id", "TurAd", kitaplar.TurlerId);
-            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "ad", kitaplar.YayinEvleriId);
-            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "AdSoyad", kitaplar.YazarlarId);
+            ViewData["TurlerId"] = new SelectList(_context.Turlers, "Id", "Id", kitaplar.TurlerId);
+            ViewData["YayinEvleriId"] = new SelectList(_context.Yayinevleris, "Id", "Id", kitaplar.YayinEvleriId);
+            ViewData["YazarlarId"] = new SelectList(_context.Yazarlars, "Id", "Id", kitaplar.YazarlarId);
             return View(kitaplar);
         }
 

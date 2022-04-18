@@ -5,23 +5,21 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">
-    Sil
-</h1>
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Sil</h1>
 
-<h3>Silmek istediğinizden emin misiniz?</h3>
+<h3>Bu kaydı silmek istediğinize emin misiniz?</h3>
 <div>
-    <h4>Kitaplar</h4>
+    <h4>Kitap</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ad)
+            Adı
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Ad)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SayfaSayisi)
+            Sayfa Sayısı
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.SayfaSayisi)
@@ -33,7 +31,7 @@
             @Html.DisplayFor(model => model.Stok)
         </dd>
         <dt class="col-sm-2">
-            Tur
+            Tür
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Turler.TurAd)

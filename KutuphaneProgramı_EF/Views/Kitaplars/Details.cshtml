@@ -12,13 +12,13 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ad)
+            Adı
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Ad)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SayfaSayisi)
+        <dt class = "col-sm-2">
+            Sayfa Sayısı
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.SayfaSayisi)
@@ -30,7 +30,7 @@
             @Html.DisplayFor(model => model.Stok)
         </dd>
         <dt class = "col-sm-2">
-            Tur
+            Tür
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Turler.TurAd)
@@ -50,6 +50,6 @@
     </dl>
 </div>
 <div>
-    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@Model.Isbn">Düzenle</a> |
+    <a class="btn btn-outline-primary btn-sm" asp-action="Edit" asp-route-id="@Model.Isbn">Düzenle</a> 
     <a class="btn btn-outline-primary btn-sm" asp-action="Index">Listeye Geri Dön</a>
 </div>

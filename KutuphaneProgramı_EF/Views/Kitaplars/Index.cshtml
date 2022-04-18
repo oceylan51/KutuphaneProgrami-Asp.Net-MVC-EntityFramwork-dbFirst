@@ -8,16 +8,16 @@
 <h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Kitaplar</h1>
 
 <p>
-    <a class="btn btn-outline-primary btn-sm" asp-action="Create">Yeni Kayıt</a>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Create" >Yeni Kayıt</a>
 </p>
-<table class="table table-sm table-success" class="table">
+<table class="table table-sm table-success">
     <thead class="text-danger">
         <tr class="text-center">
             <th>
-                @Html.DisplayNameFor(model => model.Ad)
+                Adı
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.SayfaSayisi)
+                Sayfa Sayısı
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Stok)

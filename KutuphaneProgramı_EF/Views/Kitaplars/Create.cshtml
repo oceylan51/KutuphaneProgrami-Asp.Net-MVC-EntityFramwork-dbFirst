@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Create</h1>
+<h1 class="text-center text-white" style="background-color: red;border-radius: 30px;">Kayıt</h1>
 
-<h4>Kitaplar</h4>
+<h4 >Kitap</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -19,12 +19,12 @@
                 <span asp-validation-for="Isbn" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ad" class="control-label"></label>
+                <label asp-for="Ad" class="control-label">Adı</label>
                 <input asp-for="Ad" class="form-control" />
                 <span asp-validation-for="Ad" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="SayfaSayisi" class="control-label"></label>
+                <label asp-for="SayfaSayisi" class="control-label">Sayfa Sayisi</label>
                 <input asp-for="SayfaSayisi" class="form-control" />
                 <span asp-validation-for="SayfaSayisi" class="text-danger"></span>
             </div>
@@ -42,18 +42,18 @@
                 <select asp-for="YazarlarId" class ="form-control" asp-items="ViewBag.YazarlarId"></select>
             </div>
             <div class="form-group">
-                <label asp-for="YayinEvleriId" class="control-label">Yayın Evi</label>
+                <label asp-for="YayinEvleriId" class="control-label">Yayin Evi</label>
                 <select asp-for="YayinEvleriId" class ="form-control" asp-items="ViewBag.YayinEvleriId"></select>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Kayıt" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a class="btn btn-outline-primary btn-sm" asp-action="Index">Back to List</a>
+    <a class="btn btn-outline-primary btn-sm" asp-action="Index">Listeye Geri Dön</a>
 </div>
 
 @section Scripts {
